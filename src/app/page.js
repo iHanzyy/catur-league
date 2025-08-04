@@ -9,6 +9,7 @@ import {
   addDraw, 
   resetScores 
 } from './actions';
+import Image from 'next/image';
 
 export default async function Home() {
   // Get data from Firestore
@@ -50,11 +51,14 @@ export default async function Home() {
 
           {/* VS Image di tengah */}
           <div className="flex items-center justify-center flex-shrink-0 mx-1 sm:mx-3">
-            <img 
+            <Image 
               src="/vsImage.png" 
               alt="VS" 
+              width={96}
+              height={96}
               className="object-contain w-16 h-16 sm:w-24 sm:h-24"
               style={{ minWidth: '4rem', minHeight: '4rem' }}
+              priority
             />
           </div>
           
