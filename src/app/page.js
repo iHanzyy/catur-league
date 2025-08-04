@@ -47,6 +47,16 @@ export default async function Home() {
               isLeader={isPlayer1Leader}
             />
           </div>
+
+          {/* VS Image di tengah */}
+          <div className="flex items-center justify-center my-4 lg:my-0 lg:mx-4">
+            <img 
+              src="/vsImage.png" 
+              alt="VS" 
+              className="object-contain w-36 h-36 lg:w-36 lg:h-36"
+              style={{ minWidth: '4rem', minHeight: '4rem' }}
+            />
+          </div>
           
           <div className="flex justify-center">
             <PlayerCard 

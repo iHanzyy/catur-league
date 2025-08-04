@@ -5,7 +5,7 @@ A modern, secure, and production-ready chess scoreboard application built with N
 ## Features
 
 - **Role-based Access Control**: Distinguishes between Admin and User roles
-- **Authentication**: Using NextAuth.js with GitHub and Google providers
+- **Authentication**: Using NextAuth.js
 - **Real-time Updates**: Scores update immediately for all users
 - **Dark/Light Mode**: Toggle between color schemes
 - **Responsive Design**: Works on all device sizes
@@ -18,7 +18,7 @@ A modern, secure, and production-ready chess scoreboard application built with N
 - **Language**: JavaScript
 - **Styling**: Tailwind CSS
 - **Authentication**: NextAuth.js
-- **Database**: Vercel KV (Key-Value store)
+- **Database**: Firebase
 - **Deployment**: Vercel
 
 ## Getting Started
@@ -26,7 +26,7 @@ A modern, secure, and production-ready chess scoreboard application built with N
 ### Prerequisites
 
 - Node.js 18+ and npm
-- A Vercel account (for deployment and Vercel KV)
+- A Vercel account (for deployment)
 
 ### Installation
 
@@ -48,23 +48,6 @@ cp .env.local.example .env.local
 
 4. Update the environment variables in `.env.local` with your own values.
 
-### Setting Up Authentication
-
-1. Create OAuth apps for GitHub and/or Google
-   - For GitHub: https://github.com/settings/developers
-   - For Google: https://console.developers.google.com/
-
-2. Set the callback URLs to `http://localhost:3000/api/auth/callback/{provider}` for development
-
-3. Add your OAuth credentials to `.env.local`
-
-### Setting Up Vercel KV
-
-1. Create a Vercel KV database in your Vercel dashboard
-
-2. Connect it to your project
-
-3. Add the KV environment variables to `.env.local`
 
 ### Running the Development Server
 
@@ -104,7 +87,7 @@ ADMIN_EMAILS=admin@example.com,another-admin@example.com
   - `/providers` - Context providers
 - `/src/lib` - Utility functions
   - `auth.js` - Authentication utilities
-  - `kv.js` - Vercel KV database utilities
+  
 
 ## License
 
