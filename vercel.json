@@ -1,9 +1,3 @@
 {
-  "kv": [
-    {
-      "id": "<your-kv-database-id>",
-      "name": "chess-scores-db",
-      "production": true
-    }
-  ]
+
 }
