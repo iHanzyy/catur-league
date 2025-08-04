@@ -80,7 +80,7 @@ export default async function Home() {
             <div className="inline-flex items-center px-4 py-2 text-yellow-800 bg-yellow-100 rounded-lg dark:bg-yellow-900/30 dark:text-yellow-400">
               <span className="mr-2 text-2xl">👑</span>
               <span className="font-semibold">
-                {isPlayer1Leader ? 'Andra' : 'Jojo'} is currently leading with {Math.max(player1Wins, player2Wins)} wins!
+                {isPlayer1Leader ? "Andra" : "Jojo"} is currently leading with {Math.max(player1Wins, player2Wins)} wins!
               </span>
             </div>
           </div>
@@ -92,7 +92,7 @@ export default async function Home() {
             <div className="inline-flex items-center px-4 py-2 text-blue-800 bg-blue-100 rounded-lg dark:bg-blue-900/30 dark:text-blue-400">
               <span className="mr-2 text-2xl">⚖️</span>
               <span className="font-semibold">
-                It's a tie! Both players have {player1Wins} wins each.
+                It&apos;s a tie! Both players have {player1Wins} wins each.
               </span>
             </div>
           </div>
