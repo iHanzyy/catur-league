@@ -37,7 +37,9 @@ export default function PlayerCard({ name, wins, action, disabled, photoUrl, isL
   `)}`;
 
   return (
-    <div className="relative p-8 text-center transition-all duration-300 bg-white border shadow-xl hover:shadow-2xl dark:bg-slate-800 rounded-2xl border-slate-200 dark:border-slate-700">
+    <div
+      className={`relative p-4 sm:p-8 text-center transition-all duration-300 bg-white border shadow-xl hover:shadow-2xl dark:bg-slate-800 rounded-2xl border-slate-200 dark:border-slate-700 max-w-xs w-full mx-auto`}
+    >
       {/* Crown for leader - Hanya tampil jika isLeader = true */}
       {isLeader && (
         <div className="absolute transform -translate-x-1/2 left-1/2">
@@ -59,7 +61,7 @@ export default function PlayerCard({ name, wins, action, disabled, photoUrl, isL
       )}
       
       {/* Avatar with real photo */}
-      <div className={`relative w-36 h-36 mx-auto mb-6 overflow-hidden border-4 rounded-full transition-all duration-300 ${
+      <div className={`relative w-24 h-24 sm:w-36 sm:h-36 mx-auto mb-4 sm:mb-6 overflow-hidden border-4 rounded-full transition-all duration-300 ${
         isLeader 
           ? 'border-yellow-400 shadow-lg shadow-yellow-400/50 ring-4 ring-yellow-100 dark:ring-yellow-900/30' 
           : 'border-slate-200 dark:border-slate-700'
@@ -72,7 +74,6 @@ export default function PlayerCard({ name, wins, action, disabled, photoUrl, isL
           className="object-cover w-full h-full"
           priority
           onError={(e) => {
-            // Fallback ke default avatar jika foto gagal load
             e.target.src = defaultAvatar;
           }}
         />
