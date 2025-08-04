@@ -1,0 +1,131 @@
+/* Import additional Google Fonts for variety - HARUS DI ATAS */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root CSS Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --primary: #3b82f6;
+  --secondary: #f1f5f9;
+  --accent: #10b981;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  
+  /* Font families - menggunakan CSS variables dari Next.js */
+  --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+  --font-orbitron: var(--font-orbitron);
+}
+
+/* Dark theme variables */
+:root.dark,
+[data-theme="dark"] {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --primary: #3b82f6;
+  --secondary: #1e293b;
+  --accent: #10b981;
+  --muted: #94a3b8;
+  --border: #334155;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* Headings menggunakan Poppins */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Logo/Brand menggunakan Orbitron untuk futuristic look */
+.brand-text {
+  font-family: var(--font-orbitron);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Ensure theme classes work properly */
+.light {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Custom component styles */
+@layer components {
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .card {
+    @apply bg-white border rounded-lg shadow-sm dark:bg-slate-800 border-slate-200 dark:border-slate-700 theme-transition;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 font-medium tracking-wide text-white transition-all duration-200 bg-blue-600 rounded-lg hover:bg-blue-700;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 font-medium transition-all duration-200 rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-900 dark:text-slate-100;
+  }
+  
+  /* Typography utilities */
+  .text-display {
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+  
+  .text-heading {
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-body {
+    font-family: var(--font-inter);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  
+  .text-caption {
+    font-family: var(--font-inter);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Fix for any remaining theme issues */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+  }
+}
