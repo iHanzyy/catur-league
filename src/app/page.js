@@ -36,7 +36,7 @@ export default async function Home() {
       {/* Main Content */}
       <main className="container max-w-6xl px-4 py-12 mx-auto">
         {/* Players */}
-        <div className="flex flex-row items-center justify-center gap-2 mb-12">
+        <div className="flex flex-row items-center justify-center gap-1 mb-12 sm:gap-6">
           <div className="flex justify-end flex-1">
             <PlayerCard 
               name="Andra" 
@@ -49,7 +49,7 @@ export default async function Home() {
           </div>
 
           {/* VS Image di tengah */}
-          <div className="flex items-center justify-center flex-shrink-0 mx-2">
+          <div className="flex items-center justify-center flex-shrink-0 mx-1 sm:mx-3">
             <img 
               src="/vsImage.png" 
               alt="VS" 
